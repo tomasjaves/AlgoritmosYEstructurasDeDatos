@@ -212,6 +212,7 @@ scal_prod(const vector_t<T>& v, const vector_t<T>& w)
 double
 scal_prod(const vector_t<rational_t>& v, const vector_t<rational_t>& w)
 {
+  assert(v.get_size() == w.get_size());
   double resultado = 0.f;
   for(int i = 0; i < v.get_size(); ++i) {
     resultado = resultado + v.at(i).multiply(w.at(i)).value();
